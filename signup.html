@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login</title>
+
+<style>
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Times New Roman', Times, serif;
+
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/045/349/501/small/red-fire-alarm-light-on-white-wall-in-building-hallway-emergency-safety-and-security-concepts-photo.jpg") no-repeat center center/cover;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-box {
+  width: 300px;
+  padding: 30px;
+  border: 2px solid white;
+  text-align: left;
+
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+input, button {
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+  <div class="signup-box">
+
+  <h2>Sign up</h2>
+<label for="Full Name">Full Name:</label><br>
+    <input type="text" id="name" placeholder="Enter Your Full Name">
+<label for="Email Address">Email:</label><br>
+<input type="email" id="email" placeholder="Enter Your Email Address">
+<label for="Password">password:</label><br>
+<input type="password" id="password" placeholder="Enter Your Password">
+<label for="Password">Confirm password:</label><br>
+<input type="password" id="password" placeholder="Enter Your Confirm Password">
+
+<button onclick="signup()">Create Account</button>
+
+
+<a href=" https://www.instagram.com/amaan_.i18?igsh=dHp2aDdrejNsd2F2&utm_source=ig_contact_invite" target="_blank" class="insta">
+    Instagram
+  </a>
+
+  <a href="https://www.facebook.com/share/17PFVSJtU2/" class="fb">
+    Facebook
+  </a>
+
+  <a href="https://www.linkedin.com/in/amaan-ibrahim-6a0068360?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="linkedin">
+    LinkedIn
+  </a>
+  </div>
+
+</div>
+
+</body>
+<script>
+
+function signup() {
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  // Check empty fields
+  if(name === "" || email === "" || password === ""){
+    alert("Please fill all fields");
+    return;
+  }
+
+  // Store in localStorage
+  localStorage.setItem("name", name);
+  localStorage.setItem("email", email);
+  localStorage.setItem("password", password);
+
+  alert("Account Created Successfully");
+
+  // Redirect to login page
+  window.location.href = "login.html";
+}
+
+</script>
+</html>
